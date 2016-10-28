@@ -14,6 +14,10 @@ describe(__filename, () => {
     assert.equal(parseResult.coordinates.galaxy, 2);
     assert.equal(parseResult.coordinates.system, 31);
     assert.equal(parseResult.coordinates.planet, 12);
+    assert.equal(parseResult.resources.metal, 65);
+    assert.equal(parseResult.resources.crystal, 261);
+    assert.equal(parseResult.resources.deuterium, 0);
+    assert.equal(parseResult.resources.energy, 47);
     assert.equal(parseResult.buildings[CODES.METAL_MINE], 4);
     assert.equal(parseResult.buildings[CODES.CRYSTAL_MINE], 1);
     assert.equal(parseResult.buildings[CODES.DEUTERIUM_SYNTHETIZER], 0);
