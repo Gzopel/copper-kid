@@ -22,7 +22,7 @@ describe(__filename, () => {
     assert.equal(parseResult.planet.resources.energy, 47);
     assert.equal(parseResult.planet.buildings[CODES.METAL_MINE], 4);
     assert.equal(parseResult.planet.buildings[CODES.CRYSTAL_MINE], 1);
-    assert.equal(parseResult.planet.buildings[CODES.DEUTERIUM_SYNTHETIZER], 0);
+    assert.equal(parseResult.planet.buildings[CODES.DEUTERIUM_SYNTHESIZER], 0);
     assert.equal(parseResult.planet.buildings[CODES.SOLAR_PLANT], 4);
     assert.equal(parseResult.planet.buildings[CODES.METAL_STORAGE], 0);
     assert.equal(parseResult.planet.buildings[CODES.CRYSTAL_STORAGE], 0);
@@ -45,7 +45,7 @@ describe(__filename, () => {
     assert.equal(parseResult.planet.resources.energy, 9);
     assert.equal(parseResult.planet.buildings[CODES.METAL_MINE], 8);
     assert.equal(parseResult.planet.buildings[CODES.CRYSTAL_MINE], 5);
-    assert.equal(parseResult.planet.buildings[CODES.DEUTERIUM_SYNTHETIZER], 3);
+    assert.equal(parseResult.planet.buildings[CODES.DEUTERIUM_SYNTHESIZER], 3);
     assert.equal(parseResult.planet.buildings[CODES.SOLAR_PLANT], 8);
     assert.equal(parseResult.planet.buildings[CODES.METAL_STORAGE], 0);
     assert.equal(parseResult.planet.buildings[CODES.CRYSTAL_STORAGE], 0);
