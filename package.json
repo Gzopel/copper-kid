@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "node_modules/.bin/_mocha --sort --compilers js:babel-core/register tests/"
+    "test": "node_modules/.bin/_mocha --sort --timeout 8000 --compilers js:babel-core/register tests/"
   },
   "keywords": [
     "ogame",
@@ -25,7 +25,8 @@
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-0": "6.5.0",
     "babel-register": "6.14.0",
-    "cheerio": "^0.22.0"
+    "cheerio": "^0.22.0",
+    "request": "^2.76.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
