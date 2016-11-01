@@ -5,7 +5,7 @@ import { resourcesPageParser } from '../lib/parsers/resourcesPageParser';
 import { CODES } from '../lib/GameElements';
 
 const resourcesPage =  fs.readFileSync(path.resolve('testPages', 'resources.html'), { encoding: 'utf8' });
-const resourcesPage2 =  fs.readFileSync(path.resolve('testPages', 'resources2.html'), { encoding: 'utf8' });
+const resourcesPageProduction =  fs.readFileSync(path.resolve('testPages', 'resourcesProduction.html'), { encoding: 'utf8' });
 
 describe(__filename, () => {
   it('Should parse the test page', (done) => {
@@ -34,7 +34,7 @@ describe(__filename, () => {
   });
 
   it('Should parse the building construction countdown', (done) => {
-    const parseResult = resourcesPageParser(resourcesPage2);
+    const parseResult = resourcesPageParser(resourcesPageProduction);
     assert.equal(parseResult.planet.planetName, 'Homeworld');
     assert.equal(parseResult.planet.planetId, '33628551');
     assert.equal(parseResult.planet.buildingCountdown, 2 * 60 + 28);

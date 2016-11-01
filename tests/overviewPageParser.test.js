@@ -4,6 +4,7 @@ import { assert } from 'chai';
 import { overviewPageParser } from '../lib/parsers/overviewPageParser';
 
 const overviewPage =  fs.readFileSync(path.resolve('testPages', 'overview.html'), { encoding: 'utf8' });
+const overviewAttackPage =  fs.readFileSync(path.resolve('testPages', 'overviewAttack.html'), { encoding: 'utf8' });
 
 describe(__filename, () => {
   it('Should parse the test page', (done) => {
@@ -22,7 +23,15 @@ describe(__filename, () => {
     assert.equal(parseResult.planet.buildingCountdown, 16 * 60 + 37);
     assert.equal(parseResult.planet.researchCountdown, 11 * 60 + 28);
     assert.equal(parseResult.planet.shipyardCountdown, 39);
+    assert.equal(parseResult.enemyAttacks.length, 0);
     done();
   });
+/*
+  it('Should detect an attack', () => {
+    const parseResult = overviewPageParser(overviewAttackPage);
+    assert.equal(parseResult.enemyAttacks.length, 1);
+  });
+*/
+  //TODO test more than just one mission
 
 });
