@@ -11,6 +11,7 @@ describe(__filename, () => {
   it('Should parse the test page', (done) => {
     const parseResult = resourcesPageParser(resourcesPage);
     assert.equal(parseResult.timestamp.getTime(), 1477610828);
+    assert.equal(parseResult.planets.length, 1);
     assert.equal(parseResult.planet.planetName, 'Homeworld');
     assert.equal(parseResult.planet.planetId, '33628551');
     assert.equal(parseResult.planet.buildingCountdown, 0);
@@ -35,6 +36,7 @@ describe(__filename, () => {
 
   it('Should parse the building construction countdown', (done) => {
     const parseResult = resourcesPageParser(resourcesPageProduction);
+    assert.equal(parseResult.planets.length, 1);
     assert.equal(parseResult.planet.planetName, 'Homeworld');
     assert.equal(parseResult.planet.planetId, '33628551');
     assert.equal(parseResult.planet.buildingCountdown, 2 * 60 + 28);

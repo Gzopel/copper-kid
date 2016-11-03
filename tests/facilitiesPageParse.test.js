@@ -9,6 +9,7 @@ const facilitiesPage =  fs.readFileSync(path.resolve('testPages', 'facilities.ht
 describe(__filename, () => {
   it('Should parse the test page', (done) => {
     const parseResult = facilitiesPageParser(facilitiesPage);
+    assert.equal(parseResult.planets.length, 1);
     assert.equal(parseResult.timestamp.getTime(), 1478022408);
     assert.equal(parseResult.planet.planetName, 'Homeworld');
     assert.equal(parseResult.planet.planetId, '33628551');
