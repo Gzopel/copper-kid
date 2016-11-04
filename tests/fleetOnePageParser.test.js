@@ -34,6 +34,8 @@ describe(__filename, () => {
     assert.equal(parseResult.planet.ships[GAME_ELEMENTS.RECYCLER.code], 0);
     assert.equal(parseResult.planet.ships[GAME_ELEMENTS.COLONY_SHIP.code], 1);
     assert.equal(parseResult.planet.ships[GAME_ELEMENTS.ESPIONAGE_PROBE.code], 10);
+    assert.equal(parseResult.maxOwnMissions, 4);
+    assert.equal(parseResult.ownMissions, 0);
     assert.equal(parseResult.enemyAttacks.length, 0);
     done();
   });
