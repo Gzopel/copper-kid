@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { assert } from 'chai';
-import { galaxyPageParser } from '../lib/parsers/galaxyPageParser';
+import { galaxyPageParser } from '../lib/GameClient/parsers/galaxyPageParser';
 
 const galaxyPage =  fs.readFileSync(path.resolve('testPages', 'galaxy.html'), { encoding: 'utf8' });
 

@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { Browser, PAGES } from '../lib/Browser';
+import { Browser, PAGES } from '../lib/GameClient/Browser';
 import account from  '../config/account';
 
 describe(__filename, () => {

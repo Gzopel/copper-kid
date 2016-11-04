@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { assert } from 'chai';
 import { GAME_ELEMENTS } from '../lib/GameElements';
-import { shipyardPageParser } from '../lib/parsers/shipyardPageParser';
+import { shipyardPageParser } from '../lib/GameClient/parsers/shipyardPageParser';
 
 const shipyardPage =  fs.readFileSync(path.resolve('testPages', 'shipyard.html'), { encoding: 'utf8' });
 

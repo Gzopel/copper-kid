@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { assert } from 'chai';
-import { overviewPageParser } from '../lib/parsers/overviewPageParser';
+import { overviewPageParser } from '../lib/GameClient/parsers/overviewPageParser';
 
 const overviewPage =  fs.readFileSync(path.resolve('testPages', 'overview.html'), { encoding: 'utf8' });
 const overviewMultiplePlanetsPage =  fs.readFileSync(path.resolve('testPages', 'overviewMultiplePlanets.html'), { encoding: 'utf8' });

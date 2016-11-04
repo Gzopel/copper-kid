@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { assert } from 'chai';
-import { loginPageParser } from '../lib/parsers/loginPageParser';
+import { loginPageParser } from '../lib/GameClient/parsers/loginPageParser';
 
 const loginPage =  fs.readFileSync(path.resolve('testPages', 'login.html'), { encoding: 'utf8' });
 

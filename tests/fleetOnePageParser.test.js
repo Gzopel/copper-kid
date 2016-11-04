@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { assert } from 'chai';
 import { GAME_ELEMENTS } from '../lib/GameElements';
-import { fleetOnePageParser } from '../lib/parsers/fleetOnePageParser';
+import { fleetOnePageParser } from '../lib/GameClient/parsers/fleetOnePageParser';
 
 const fleetOnePage =  fs.readFileSync(path.resolve('testPages', 'fleet1.html'), { encoding: 'utf8' });
 
