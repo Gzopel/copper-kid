@@ -21,7 +21,7 @@ describe(__filename, () => {
     assert.equal(parseResult.planet.resources.crystal, 82210);
     assert.equal(parseResult.planet.resources.deuterium, 10007);
     assert.equal(parseResult.planet.resources.energy, 207);
-    assert.equal(parseResult.messageIds.length, 10);
+    assert.equal(parseResult.messages.length, 10);
     // TODO verify Ids and hasDetails
     assert.equal(parseResult.enemyAttacks.length, 0);
     done();
@@ -41,7 +41,7 @@ describe(__filename, () => {
     assert.equal(parseResult.planet.resources.crystal, 91185);
     assert.equal(parseResult.planet.resources.deuterium, 20422);
     assert.equal(parseResult.planet.resources.energy, -11);
-    assert.equal(parseResult.messageIds.length, 10);
+    assert.equal(parseResult.messages.length, 10);
     // TODO verify Ids and hasDetails
     assert.equal(parseResult.enemyAttacks.length, 0);
     done();
