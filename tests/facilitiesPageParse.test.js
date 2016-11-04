@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { assert } from 'chai';
 import { facilitiesPageParser } from '../lib/parsers/facilitiesPageParser';
-import { CODES } from '../lib/GameElements';
+import { GAME_ELEMENTS } from '../lib/GameElements';
 
 const facilitiesPage =  fs.readFileSync(path.resolve('testPages', 'facilities.html'), { encoding: 'utf8' });
 
@@ -21,14 +21,14 @@ describe(__filename, () => {
     assert.equal(parseResult.planet.resources.crystal, 15020);
     assert.equal(parseResult.planet.resources.deuterium, 2253);
     assert.equal(parseResult.planet.resources.energy, 7);
-    assert.equal(parseResult.planet.facilitiesBuildings[CODES.ROBOTICS_FACTORY], 2);
-    assert.equal(parseResult.planet.facilitiesBuildings[CODES.SHIPYARD], 6);
-    assert.equal(parseResult.planet.facilitiesBuildings[CODES.RESEARCH_LAB], 6);
-    assert.equal(parseResult.planet.facilitiesBuildings[CODES.ALLIANCE_DEPOT], 0);
-    assert.equal(parseResult.planet.facilitiesBuildings[CODES.MISSILE_SILO], 0);
-    assert.equal(parseResult.planet.facilitiesBuildings[CODES.NANITE_FACTORY], 0);
-    assert.equal(parseResult.planet.facilitiesBuildings[CODES.TERRAFORMER], 0);
-    assert.equal(parseResult.planet.facilitiesBuildings[CODES.SPACE_DOCK], 0);
+    assert.equal(parseResult.planet.facilitiesBuildings[GAME_ELEMENTS.ROBOTICS_FACTORY.code], 2);
+    assert.equal(parseResult.planet.facilitiesBuildings[GAME_ELEMENTS.SHIPYARD.code], 6);
+    assert.equal(parseResult.planet.facilitiesBuildings[GAME_ELEMENTS.RESEARCH_LAB.code], 6);
+    assert.equal(parseResult.planet.facilitiesBuildings[GAME_ELEMENTS.ALLIANCE_DEPOT.code], 0);
+    assert.equal(parseResult.planet.facilitiesBuildings[GAME_ELEMENTS.MISSILE_SILO.code], 0);
+    assert.equal(parseResult.planet.facilitiesBuildings[GAME_ELEMENTS.NANITE_FACTORY.code], 0);
+    assert.equal(parseResult.planet.facilitiesBuildings[GAME_ELEMENTS.TERRAFORMER.code], 0);
+    assert.equal(parseResult.planet.facilitiesBuildings[GAME_ELEMENTS.SPACE_DOCK.code], 0);
     done();
   });
 });
