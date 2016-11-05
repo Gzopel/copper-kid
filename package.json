@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "node_modules/.bin/_mocha --sort --timeout 8000 --compilers js:babel-core/register tests/"
+    "test": "node_modules/.bin/_mocha --sort --timeout 8000 --compilers js:babel-core/register tests/",
+    "integration": "node_modules/.bin/_mocha --sort --timeout 60000 --compilers js:babel-core/register tests_integration/"
   },
   "keywords": [
     "ogame",

@@ -23,6 +23,7 @@
     "maximumLineLength": 0,
     "arrow-body-style": 0,
     "quote-props": 0,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "no-loop-func": 0
   }
 }
