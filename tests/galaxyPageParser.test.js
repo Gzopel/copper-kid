@@ -5,7 +5,6 @@ import galaxyResponse from '../testPages/galaxyView.json';
 describe(__filename, () => {
   it('Should parse the test json', (done) => {
     const parseResult = galaxyPageParser(galaxyResponse.galaxy);
-    console.log(parseResult);
     //TODO validations
     done();
   });

@@ -38,9 +38,9 @@ describe(__filename, () => {
       .catch(error => console.error('catch error', error));
   });
 
-  it('3. I should scan the galaxy', (done) => {
+  it('3. Should scan the galaxy', (done) => {
     const coordinates = gameState.planets[Object.keys(gameState.planets)[0]].coordinates;
-    client.galaxyScan(coordinates.galaxy, coordinates.system - 2, coordinates.system + 2)
+    client.galaxyScan(coordinates.galaxy, 97, 99)
       .then((galaxyScan) => {
         galaxy = galaxyScan;
         // TODO some validations
@@ -49,4 +49,26 @@ describe(__filename, () => {
       .then(done)
       .catch(error => console.error('catch error', error));
   });
+
+  it('4. Should spy an inactive player', (done) => {
+    const inactive = galaxy.filter((planet) => {
+      return planet.playerStatus === 'inactive';
+    });
+
+    if (!inactive.length) {
+      console.log('No inactive players to spy');
+      return done;
+    }
+
+    const coordinates = inactive[0].coordinates;
+
+    client.spyPlanet(coordinates)
+      .then((fleet) => {
+        // TODO some validations
+        console.log(fleet);
+      })
+      .then(done)
+      .catch(error => console.error('catch error', error));
+  });
+
 });
