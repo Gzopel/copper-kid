@@ -3,7 +3,7 @@ import { GAME_ELEMENTS } from './lib/GameElements';
 import GameClient from './lib/GameClient';
 
 const spyProbes = 1;
-const attackRange = 10;
+const attackRange = 15;
 
 const client = new GameClient(account);
 
@@ -36,9 +36,9 @@ const spyAll = (targets, planet) => {
     return Promise.resolve();
   }
   if (gameState.ownMissions === gameState.maxOwnMissions) { 
-    console.log('waiting 2 min...')
+    console.log('waiting 30 secs...')
     return new Promise((resolve) => {
-      setTimeout(resolve, 2 * 60 * 1000 )
+      setTimeout(resolve, 30 * 1000 )
     })
     .then(client.updateFleetState)
     .then((state) => {
@@ -173,6 +173,7 @@ const play = () => {
   client.login()
     .then(client.fetchGameState)
     .then((state) => {
+      console.log(state);
       gameState = state;
     })
     .then(client.getAllSpyMessages)// discard old messages
