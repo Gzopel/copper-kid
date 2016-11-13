@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import GameClient from '../lib/GameClient';
-import { GAME_ELEMENTS } from '../lib/GameElements';
+import { CODES } from '../lib/GameElements';
 import { account } from '../config/account';
 
 const client = new GameClient(account);
@@ -95,12 +95,26 @@ describe(__filename, () => {
     }
 
     client.attackPlanet(targetCoordinates, {
-      [GAME_ELEMENTS.SMALL_CARGO.code]: 1,
+      [CODES.SMALL_CARGO]: 1,
     }).then((fleet) => {
         // TODO some validations
         console.log(fleet);
       })
       .then(done)
+      .catch(error => console.error('catch error', error));
+  });
+
+  it('8. Should build some defense', (done) => {
+    const planet = Object.keys(gameState.planets)[0];
+    client.buildUnit(CODES.LIGHT_LASER, 5, planet)
+      .then(() => done)
+      .catch(error => console.error('catch error', error));
+  });
+
+  it('9. Should build a spy probe', (done) => {
+    const planet = Object.keys(gameState.planets)[0];
+    client.buildUnit(CODES.ESPIONAGE_PROBE, 1, planet)
+      .then(() => done)
       .catch(error => console.error('catch error', error));
   });
 });
